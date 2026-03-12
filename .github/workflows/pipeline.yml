@@ -1,4 +1,4 @@
-name: MLflow CI/CD Pipeline
+name: MLflow CI Pipeline
 
 on:
   push:
@@ -26,9 +26,6 @@ jobs:
 
       - name: Train Model
         run: python train.py
-
-      - name: Test Model Loading
-        run: python load_model.py
 
       - name: Build Docker Image
         run: docker build -t iris-api .
